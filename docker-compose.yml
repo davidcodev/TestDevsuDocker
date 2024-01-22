@@ -1,0 +1,97 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: ./database
+    image: postgres
+    container_name: postgres
+    expose:
+      - 5432
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: bank
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 000000
+    hostname: postgres
+    networks:
+      - mired
+
+  microservice-config:
+    build:
+      context: ./microservice-config
+    depends_on:
+      - postgres
+    expose:
+      - 8888
+    ports:
+      - '8888:8888'
+    image: microservice-config
+    container_name: microservice-config
+    hostname: microservice-config
+    networks:
+      - mired
+
+  microservice-eureka:
+    build:
+      context: ./microservice-eureka
+    depends_on:
+      - microservice-config
+    expose:
+      - 8761
+    ports:
+      - '8761:8761'
+    image: microservice-eureka
+    container_name: microservice-eureka
+    hostname: microservice-eureka
+    networks:
+      - mired
+
+  microservice-gateway:
+    build:
+      context: ./microservice-gateway
+    depends_on:
+      - microservice-eureka
+    expose:
+      - 8080
+    ports:
+      - '8080:8080'
+    image: microservice-gateway
+    container_name: microservice-gateway
+    hostname: microservice-gateway
+    networks:
+      - mired
+
+  microservice-customer:
+    build:
+      context: ./microservice-customer
+    depends_on:
+      - microservice-eureka
+    expose:
+      - 8090
+    ports:
+      - '8090:8090'
+    image: microservice-customer
+    container_name: microservice-customer
+    hostname: microservice-customer
+    networks:
+      - mired
+
+  microservice-account:
+    build:
+      context: ./microservice-account
+    depends_on:
+      - microservice-eureka
+    expose:
+      - 8091
+    ports:
+      - '8091:8091'
+    image: microservice-account
+    container_name: microservice-account
+    hostname: microservice-account
+    networks:
+      - mired
+
+networks:
+  mired:

@@ -1,0 +1,6 @@
+FROM openjdk:21-jdk
+
+WORKDIR /app
+COPY target/microservice-eureka-1.jar .
+
+CMD ["java", "-jar", "microservice-eureka-1.jar"]

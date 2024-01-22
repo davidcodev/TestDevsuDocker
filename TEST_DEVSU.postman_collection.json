@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "2e3568f6-80a3-44e4-8e22-d99729d5fc35",
+		"name": "TEST_DEVSU",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2878900"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/clientes/listar",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"clientes",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listatodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/clientes/listartodo",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"clientes",
+								"listartodo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/clientes/buscar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"clientes",
+								"buscar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identificacion\": \"0000000000\",\r\n    \"nombre\": \"Anita Garzon\",\r\n    \"genero\": \"M\",\r\n    \"edad\": 20,\r\n    \"direccion\": \"Calle vieja\",\r\n    \"telefono\": \"0999999999\",\r\n    \"contrasena\": \"pass0\",\r\n    \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/clientes/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"clientes",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualiza",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Lucia\",\r\n    \"genero\": \"M\",\r\n    \"edad\": 25,\r\n    \"direccion\": \"Av. Ordoñez Lasso\",\r\n    \"telefono\": \"0981111111\",\r\n    \"contrasena\": \"pass55\",\r\n    \"estado\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/clientes/actualizar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"clientes",
+								"actualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/clientes/eliminar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"clientes",
+								"eliminar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/cuentas/listar",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"cuentas",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/cuentas/listar/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"cuentas",
+								"listar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 4,\r\n    \"nroCuenta\": 1,\r\n    \"tipo\": \"AHORROS\",\r\n    \"saldoInicial\": 33,\r\n    \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/cuentas/crear",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"cuentas",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nroCuenta\": 1,\r\n    \"tipo\": \"AHORROS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/cuentas/eliminar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"cuentas",
+								"eliminar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualiza",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nroCuenta\": 100,\r\n    \"tipo\": \"CORRIENTE\",\r\n    \"saldoInicial\": 200,\r\n    \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/cuentas/actualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"cuentas",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "lista",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/movimientos/listar",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"movimientos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/movimientos/listar/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"movimientos",
+								"listar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deposito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nroCuenta\": 2,\r\n    \"tipoCuenta\": \"AHORROS\",\r\n    \"fecha\": \"03/01/2023 12:00:00\",\r\n    \"valor\": 120\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/movimientos/deposito",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"movimientos",
+								"deposito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retiro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nroCuenta\": 2,\r\n    \"tipoCuenta\": \"AHORROS\",\r\n    \"fecha\": \"04/01/2023 12:00:00\",\r\n    \"valor\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8091/movimientos/retiro",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"movimientos",
+								"retiro"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reportes",
+			"item": [
+				{
+					"name": "estadoCuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/reportes?fDesde=2023-01-01T00:00:00&fHasta=2023-02-01T23:00:00&id=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "fDesde",
+									"value": "2023-01-01T00:00:00"
+								},
+								{
+									"key": "fHasta",
+									"value": "2023-02-01T23:00:00"
+								},
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

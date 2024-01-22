@@ -1,0 +1,6 @@
+FROM openjdk:21-jdk
+
+WORKDIR /app
+COPY target/microservice-config-1.jar .
+
+CMD ["java", "-jar", "microservice-config-1.jar"]

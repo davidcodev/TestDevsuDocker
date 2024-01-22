@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: microservice-gateway
+  config:
+    import: configserver:http://microservice-config:8888 #ruta y puerto del micro config server

@@ -1,0 +1,24 @@
+#eureka:
+#  client:
+#    register-with-eureka: false
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: microservice-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: customer
+          uri: http://microservice-customer:8090
+          predicates:
+            - Path=/clientes/**
+        - id: account
+          uri: http://microservice-account:8091
+          predicates:
+            - Path=/cuentas/**

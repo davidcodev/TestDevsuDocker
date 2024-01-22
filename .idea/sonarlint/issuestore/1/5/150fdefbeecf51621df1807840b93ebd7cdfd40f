@@ -1,0 +1,15 @@
+
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒç‹òÑ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒç‹òÑ1
+C
+java:S1452-"&Remove usage of generic wildcard type.(®³Íƒ8‹ç‹òÑ1
+H
+java:S1452E"&Remove usage of generic wildcard type.(Æ»ù÷ÿÿÿÿÿ8‘ç‹òÑ1
+^
+java:S1128"<Remove this unused import 'com.micro.account.dto.ReportDTO'.(Êêµ£ûÿÿÿÿ8¡©µòÑ1
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8¢©µòÑ1
+Q
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8Ç€¯òÑ1

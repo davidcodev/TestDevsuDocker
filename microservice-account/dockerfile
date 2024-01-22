@@ -1,0 +1,6 @@
+FROM openjdk:21-jdk
+
+WORKDIR /app
+COPY target/microservice-account-0.0.1-SNAPSHOT.jar .
+
+CMD ["java", "-jar", "microservice-account-0.0.1-SNAPSHOT.jar"]

@@ -1,5 +1,11 @@
 
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8–ªúòÑ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8òÀºçÓ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8–ªúòÑ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8óÀºçÓ1
+I
+java:S1602*",Remove useless curly braces around statement(šÔŒƒ8úÀºçÓ1
+N
+java:S1128"1Remove this unused import 'java.math.BigDecimal'.(êêŠ8‰ÁºçÓ1
+Z
+java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8‰ÁºçÓ1

@@ -13,7 +13,7 @@ services:
     environment:
       POSTGRES_DB: bank
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 000000
+      POSTGRES_PASSWORD: '000000'
     hostname: postgres
     networks:
       - mired

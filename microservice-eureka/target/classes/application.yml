@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: microservice-eureka #nombre del micro de eureka
+  config:
+    import: configserver:http://microservice-config:8888 #ruta y puerto del micro config server

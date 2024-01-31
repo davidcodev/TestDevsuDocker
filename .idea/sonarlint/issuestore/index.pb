@@ -113,7 +113,5 @@ O
 microservice-gateway/dockerfile,b\b\bbad104a0839a9100fd261f7f742a9dc702253d0
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-
-Omicroservice-account/src/main/java/com/micro/account/helper/SecuriryConfig.java,6/d/6d6fea0a70ed763b3dfd9caf1c7821f222ad79d6
 Å
 Qmicroservice-customer/src/main/java/com/micro/customer/config/SecuriryConfig.java,5/7/57fd9a750a3e71e368ca90990d8834bbef31e0f9

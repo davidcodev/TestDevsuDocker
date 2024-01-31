@@ -40,6 +40,7 @@ public class ReportController {
         accounts.forEach(ac -> {
             listGeneral.add(movementService.findByNroCuentaAndTipo(ac.getId().getNroCuenta(), ac.getId().getTipoCuenta()));
         });
+        //Filtro la información por el rango de fechas
         List<Movement> filteredMovements = listGeneral.stream()
                 .flatMap(List::stream)
                 .filter(m -> m.getFecha().isAfter(fDesde) && m.getFecha().isBefore(fHasta))

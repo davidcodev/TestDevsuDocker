@@ -15,6 +15,9 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+/**
+ * Entidad Movement que almacenará los movimientos realizados (depósitos y retiros)
+ */
 @Entity
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class Movement {

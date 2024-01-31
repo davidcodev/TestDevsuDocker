@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Objeto usado para setear los campos de un cliente que se eliminará
+ * Objeto usado para setear los campos de un cliente
  */
 @Getter @Setter
 public class CustomerUpdateDTO {

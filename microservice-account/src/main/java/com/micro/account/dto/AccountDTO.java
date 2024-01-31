@@ -6,7 +6,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * Se usa para presentar los datos de la cuenta en el endpoint de consulta
+ * Objeto que se usa para presentar los datos de la cuenta en el endpoint de consulta
  * incluye el nombre del cliente en lugar de su Id
  */
 @Getter @Setter

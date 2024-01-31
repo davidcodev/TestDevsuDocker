@@ -151,7 +151,8 @@ public class AccountController {
             return validation(result);
         AccountPK pK = new AccountPK(id, account.getNroCuenta(), account.getTipo());
         Optional<Account> accountOpt = accountService.delete(pK);
-        if(accountOpt.isPresent()) return ResponseEntity.ok(accountOpt);
+        if(accountOpt.isPresent())
+            return ResponseEntity.ok(accountOpt);
         ErrorModel error = new ErrorModel(
                 HttpStatus.NOT_FOUND.value(),
                 HttpStatus.NOT_FOUND,

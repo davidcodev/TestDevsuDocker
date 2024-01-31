@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Se utiliza para consumir el Endpoint de Clientes, trae todos los campos de un Cliente
+ * Objeto que se utiliza para consumir el Endpoint de Clientes, trae todos los campos de un Cliente
  */
 @Getter @Setter
 public class CustomerDTO {

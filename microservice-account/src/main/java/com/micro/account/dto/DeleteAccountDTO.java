@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * Se utiliza para modelar los datos para eliminar una cuenta
+ * Objeto que se utiliza para modelar los datos para eliminar una cuenta
  */
 @Getter @Setter
 public class DeleteAccountDTO {

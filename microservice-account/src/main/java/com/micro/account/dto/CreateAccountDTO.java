@@ -12,7 +12,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 /**
- * Se utiliza para modelar los datos de la creación de una cuenta
+ * Objeto que se utiliza para modelar los datos de la creación de una cuenta
  */
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor
 public class CreateAccountDTO {

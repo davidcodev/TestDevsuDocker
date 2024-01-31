@@ -12,6 +12,9 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Objeto utilizado para realizar depósitos y retiros
+ */
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class DepositoDTO {
     @NotNull(message = "no se ha encontrado")

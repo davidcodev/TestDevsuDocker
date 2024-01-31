@@ -17,30 +17,55 @@ public class ClientServiceImpl implements ClientService {
     @Autowired
     private ClientRepository clientRepository;
 
+    /**
+     * Busca todos los clientes registrados
+     * @return Lista de tipo [Client]
+     */
     @Override
     @Transactional(readOnly = true)
     public List<Client> findAll() {
         return (List<Client>) clientRepository.findAll();
     }
 
+    /**
+     * Busca un cliente por su Id (no identificación)
+     * @param id Identificador del cliente
+     * @return Objeto de tipo Optional[Client]
+     */
     @Override
     @Transactional(readOnly = true)
     public Optional<Client> findById(Long id) {
         return clientRepository.findById(id);
     }
 
+    /**
+     * Busca un cliente por su Identificación (no id)
+     * @param id Número de identificación del cliente
+     * @return Objeto de tipo Optional[Client]
+     */
     @Override
     @Transactional(readOnly = true)
     public Optional<Client> findByIdentificacion(String id) {
         return clientRepository.findByIdentificacion(id);
     }
 
+    /**
+     * Guarda en la DB el cliente
+     * @param client Objeto Client
+     * @return Objeto Client almacenado
+     */
     @Override
     @Transactional
     public Client save(Client client) {
         return clientRepository.save(client);
     }
 
+    /**
+     * Actualiza los datos de un cliente a través de su id
+     * @param id Identificador del cliente
+     * @param client Objeto Client a actualizar
+     * @return Objeto de tipo Optional[Client]
+     */
     @Override
     @Transactional
     public Optional<Client> update(Long id, CustomerUpdateDTO client) {
@@ -59,6 +84,11 @@ public class ClientServiceImpl implements ClientService {
         return clientOpt;
     }
 
+    /**
+     * Elimina a un cliente de la DB
+     * @param id Identificador del cliente
+     * @return Objeto de tipo Optional[Client]
+     */
     @Override
     @Transactional
     public Optional<Client> delete(Long id) {

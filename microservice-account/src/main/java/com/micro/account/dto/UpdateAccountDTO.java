@@ -11,6 +11,9 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
+/**
+ * Objeto usado para modelar los datos de una cuenta que se pueden actualizar
+ */
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class UpdateAccountDTO {
     @NotNull(message = "no se ha encontrado")

@@ -5,14 +5,17 @@ import com.micro.customer.dto.CustomerUpdateDTO;
 import com.micro.customer.entities.Client;
 import com.micro.customer.models.ErrorModel;
 import com.micro.customer.services.ClientService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.validation.BindingResult;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/clientes")
@@ -58,7 +61,7 @@ public class ClientController {
      * @return cliente / error
      */
     @GetMapping("/buscar/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
+    public ResponseEntity<?> findById(@Valid @PathVariable Long id) {
         Optional<Client> clientOpt = clientService.findById(id);
         if(clientOpt.isPresent())
             return ResponseEntity.ok(clientOpt);
@@ -74,7 +77,9 @@ public class ClientController {
      * @return cliente / error
      */
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody Client client) {
+    public ResponseEntity<?> create(@Valid @RequestBody Client client, BindingResult result) {
+        if(result.hasFieldErrors())
+            return validation(result);
         Optional<Client> clientOpt = clientService.findByIdentificacion(client.getIdentificacion());
         if(clientOpt.isPresent()){
             ErrorModel error = new ErrorModel(
@@ -93,7 +98,9 @@ public class ClientController {
      * @return cliente actualizado / error
      */
     @PatchMapping("/actualizar/{id}")
-    public ResponseEntity<?> update(@PathVariable Long id, @RequestBody CustomerUpdateDTO client) {
+    public ResponseEntity<?> update(@Valid @RequestBody CustomerUpdateDTO client, BindingResult result, @PathVariable Long id) {
+        if(result.hasFieldErrors())
+            return validation(result);
         Optional<Client> clientOpt = clientService.update(id, client);
         if(clientOpt.isPresent())
             return ResponseEntity.status(HttpStatus.OK).body(clientOpt);
@@ -124,5 +131,18 @@ public class ClientController {
     @GetMapping("/search-by-id/{id}")
     public ResponseEntity<?> findByIdId(@PathVariable Long id) {
         return ResponseEntity.ok(clientService.findById(id));
+    }
+
+    /**
+     * El siguiente método valida los campos de una trama
+     * @param result Objeto validado
+     * @return Mensaje de error con el estatus Bad_Request
+     */
+    private ResponseEntity<?> validation(BindingResult result) {
+        Map<String, String> errors = new HashMap<>();
+        result.getFieldErrors().forEach(e -> {
+            errors.put(e.getField(), "El campo " + e.getField() + " " + e.getDefaultMessage());
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
 }

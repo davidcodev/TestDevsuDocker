@@ -1,5 +1,6 @@
 package com.micro.account.services;
 
+import com.micro.account.dto.CustomerDTO;
 import com.micro.account.dto.UpdateAccountDTO;
 import com.micro.account.entities.Account;
 import com.micro.account.entities.AccountPK;
@@ -11,6 +12,7 @@ import java.util.Optional;
 public interface AccountService {
     List<Account> findAll();
     String findCustomerById(Long id);
+    CustomerDTO findAllCustomerById(Long id);
     List<Account> findAllByIds(Long id);
     Optional<Account> findByPK(AccountPK pK);
     Account save(Account account);

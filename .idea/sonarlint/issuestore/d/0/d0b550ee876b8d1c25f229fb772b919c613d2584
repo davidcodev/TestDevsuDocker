@@ -1,15 +1,15 @@
 
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ıû«ÉÑ1
-H
-java:S1452="&Remove usage of generic wildcard type.(Üõ¶¶ûÿÿÿÿ8†ü«ÉÑ1
-H
-java:S1452M"&Remove usage of generic wildcard type.(ß˜Üƒûÿÿÿÿ8‰ü«ÉÑ1
-H
-java:S1452`"&Remove usage of generic wildcard type.(ÿ¦ÂÛıÿÿÿÿ8ü«ÉÑ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ıû«ÉÑ1
 C
-java:S1452q"&Remove usage of generic wildcard type.(ˆŸ‚»8ü«ÉÑ1
-H
-java:S1452}"&Remove usage of generic wildcard type.(²ããÛüÿÿÿÿ8‘ü«ÉÑ1
-Z
-java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8¿ğÖÉÑ1
+java:S1452@"&Remove usage of generic wildcard type.(‚ª»Ê8†ü«ÉÑ1
+C
+java:S1452P"&Remove usage of generic wildcard type.(…ÂÔ8‰ü«ÉÑ1
+C
+java:S1452e"&Remove usage of generic wildcard type.(“à€í8ü«ÉÑ1
+C
+java:S1452x"&Remove usage of generic wildcard type.(ˆŸ‚»8ü«ÉÑ1
+I
+java:S1452„"&Remove usage of generic wildcard type.(²ããÛüÿÿÿÿ8‘ü«ÉÑ1
+O
+java:S1602",Remove useless curly braces around statement(óÁ××ùÿÿÿÿ8®¬ûÙÕ1

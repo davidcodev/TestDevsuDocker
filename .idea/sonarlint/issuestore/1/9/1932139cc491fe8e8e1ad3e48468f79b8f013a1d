@@ -1,9 +1,13 @@
 
+E
+java:S5411X"(Use a primitive boolean expression here.(ÏÜ„½8ñ›ƒãÕ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8çı±çÑ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8çı±çÑ1
 H
-java:S1452I"&Remove usage of generic wildcard type.(Ç‚ñíûÿÿÿÿ8òı±çÑ1
+java:S1452J"&Remove usage of generic wildcard type.(Ñçûÿÿÿÿ8òı±çÑ1
 H
-java:S1452h"&Remove usage of generic wildcard type.(»˜¹ÿÿÿÿÿ8÷ı±çÑ1
-C
-java:S1452|"&Remove usage of generic wildcard type.(–ÑÓÒ8õâÜçÑ1
+java:S1452"&Remove usage of generic wildcard type.(Ä®àÙÿÿÿÿÿ8÷ı±çÑ1
+I
+java:S1452•"&Remove usage of generic wildcard type.(î–¬­ûÿÿÿÿ8õâÜçÑ1
+O
+java:S1602©",Remove useless curly braces around statement(óÁ××ùÿÿÿÿ8åÅÄßÕ1

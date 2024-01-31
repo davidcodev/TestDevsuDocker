@@ -1,5 +1,8 @@
 
+e
+java:S1128"CRemove this unused import 'jakarta.validation.constraints.Pattern'.(Îá˜ãúÿÿÿÿ8ˆØÛÕ1
 H
-java:S1128"+Remove this unused import 'lombok.Builder'.(§’Ğß8¨µ™ÉÑ1
+java:S1128"+Remove this unused import 'lombok.Builder'.(§’Ğß8¦¹óÚÕ1
 R
-java:S1128"5Remove this unused import 'lombok.NoArgsConstructor'.(¸¨›8¨µ™ÉÑ1
+java:S1128
+"5Remove this unused import 'lombok.NoArgsConstructor'.(¸¨›8§¹óÚÕ1

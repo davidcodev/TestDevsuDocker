@@ -9,7 +9,7 @@ services:
     expose:
       - 5432
     ports:
-      - '5432:5432'
+      - '5431:5431'
     environment:
       POSTGRES_DB: bank
       POSTGRES_USER: postgres

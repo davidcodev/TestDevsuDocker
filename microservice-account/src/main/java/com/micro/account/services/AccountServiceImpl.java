@@ -37,6 +37,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional(readOnly = true)
+    public CustomerDTO findAllCustomerById(Long id) {
+        return customerClient.findCustomerById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public List<Account> findAllByIds(Long id) {
         return accountRepository.findAllByIds(id);
     }

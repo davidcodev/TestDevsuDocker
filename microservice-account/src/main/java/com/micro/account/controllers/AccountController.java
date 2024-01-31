@@ -1,19 +1,20 @@
 package com.micro.account.controllers;
 
-import com.micro.account.dto.AccountDTO;
-import com.micro.account.dto.CreateAccountDTO;
-import com.micro.account.dto.DeleteAccountDTO;
-import com.micro.account.dto.UpdateAccountDTO;
+import com.micro.account.dto.*;
 import com.micro.account.entities.Account;
 import com.micro.account.entities.AccountPK;
 import com.micro.account.models.ErrorModel;
 import com.micro.account.services.AccountService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -70,13 +71,35 @@ public class AccountController {
      * @return Cuenta creada
      */
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody CreateAccountDTO account) {
+    public ResponseEntity<?> create(@Valid @RequestBody CreateAccountDTO account, BindingResult result) {
+        if(result.hasFieldErrors())
+            return validation(result);
         //Valida que el cliente exista:
         if(accountService.findCustomerById(account.getIdCliente()).compareTo("") == 0){
             ErrorModel error = new ErrorModel(
                     HttpStatus.NOT_FOUND.value(),
                     HttpStatus.NOT_FOUND,
                     "No se ha encontrado el cliente, debe crearlo antes.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+        }
+
+        //Valida que el estado del cliente sea true (activo)
+        CustomerDTO customer = accountService.findAllCustomerById(account.getIdCliente());
+        if(!customer.getEstado()){
+            ErrorModel error = new ErrorModel(
+                    HttpStatus.NOT_FOUND.value(),
+                    HttpStatus.NOT_FOUND,
+                    "El estado del cliente es inactivo (false) debe activarlo.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+        }
+
+        //Valida que no exista una cuenta con el mismo número y mismo tipo
+        Account account1 = accountService.findByIdNroCuentaAndIdTipoCuenta(account.getNroCuenta(), account.getTipo());
+        if(account1 != null){
+            ErrorModel error = new ErrorModel(
+                    HttpStatus.NOT_FOUND.value(),
+                    HttpStatus.NOT_FOUND,
+                    "Ya existe una cuenta con el mismo número asignado a otro cliente.");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
         }
 
@@ -101,7 +124,9 @@ public class AccountController {
      * @return cuenta actualizada / error
      */
     @PatchMapping("/actualizar")
-    public ResponseEntity<?> update(@RequestBody UpdateAccountDTO account) {
+    public ResponseEntity<?> update(@Valid @RequestBody UpdateAccountDTO account, BindingResult result) {
+        if(result.hasFieldErrors())
+            return validation(result);
         AccountPK pK = new AccountPK(account.getId(), account.getNroCuenta(), account.getTipo());
         Optional<Account> accountOpt = accountService.update(pK, account);
         if(accountOpt.isPresent())
@@ -121,7 +146,9 @@ public class AccountController {
      * @return Cuenta eliminada
      */
     @DeleteMapping("/eliminar/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id, @RequestBody DeleteAccountDTO account){
+    public ResponseEntity<?> delete(@PathVariable Long id, @Valid @RequestBody DeleteAccountDTO account, BindingResult result){
+        if(result.hasFieldErrors())
+            return validation(result);
         AccountPK pK = new AccountPK(id, account.getNroCuenta(), account.getTipo());
         Optional<Account> accountOpt = accountService.delete(pK);
         if(accountOpt.isPresent()) return ResponseEntity.ok(accountOpt);
@@ -130,5 +157,18 @@ public class AccountController {
                 HttpStatus.NOT_FOUND,
                 "No es posible eliminar la cuenta, es posible que el id no exista");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
+
+    /**
+     * El siguiente método valida los campos de una trama
+     * @param result Objeto validado
+     * @return Mensaje de error con el estatus Bad_Request
+     */
+    private ResponseEntity<?> validation(BindingResult result) {
+        Map<String, String> errors = new HashMap<>();
+        result.getFieldErrors().forEach(e -> {
+            errors.put(e.getField(), "El campo " + e.getField() + " " + e.getDefaultMessage());
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
 }

@@ -1,15 +1,19 @@
 
+E
+java:S5411K"(Use a primitive boolean expression here.(×„ôâ8ç§ÇãÕ1
+E
+java:S5411}"(Use a primitive boolean expression here.(×„ôâ8¾¥èãÕ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒç‹òÑ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÿ§ÇãÕ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ƒç‹òÑ1
-C
-java:S1452-"&Remove usage of generic wildcard type.(®³Íƒ8‹ç‹òÑ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÿ§ÇãÕ1
 H
-java:S1452E"&Remove usage of generic wildcard type.(Æ»ù÷ÿÿÿÿÿ8‘ç‹òÑ1
+java:S1452="&Remove usage of generic wildcard type.(ñ¾Şèúÿÿÿÿ8ƒ¨ÇãÕ1
+H
+java:S1452o"&Remove usage of generic wildcard type.(ú±Šúÿÿÿÿ8Š¨ÇãÕ1
+O
+java:S1602Ÿ",Remove useless curly braces around statement(óÁ××ùÿÿÿÿ8¨ÇãÕ1
 ^
-java:S1128"<Remove this unused import 'com.micro.account.dto.ReportDTO'.(Êêµ£ûÿÿÿÿ8¡©µòÑ1
+java:S1128"<Remove this unused import 'com.micro.account.dto.ReportDTO'.(Êêµ£ûÿÿÿÿ8•Å”æÕ1
 V
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8¢©µòÑ1
-Q
-java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8Ç€¯òÑ1
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8•Å”æÕ1

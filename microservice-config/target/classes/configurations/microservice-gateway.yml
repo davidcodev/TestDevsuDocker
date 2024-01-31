@@ -22,3 +22,11 @@ spring:
           uri: http://microservice-account:8091
           predicates:
             - Path=/cuentas/**
+        - id: movement
+          uri: http://microservice-account:8091
+          predicates:
+            - Path=/movimientos/**
+        - id: report
+          uri: http://microservice-account:8091
+          predicates:
+            - Path=/reportes/**

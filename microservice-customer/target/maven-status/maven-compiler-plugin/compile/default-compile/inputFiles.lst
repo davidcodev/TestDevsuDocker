@@ -1,6 +1,7 @@
 /home/david/Documentos/Spring_Workspace/TestDevsuDocker/microservice-customer/src/main/java/com/micro/customer/services/ClientServiceImpl.java
 /home/david/Documentos/Spring_Workspace/TestDevsuDocker/microservice-customer/src/main/java/com/micro/customer/entities/Client.java
 /home/david/Documentos/Spring_Workspace/TestDevsuDocker/microservice-customer/src/main/java/com/micro/customer/MicroserviceCustomerApplication.java
+/home/david/Documentos/Spring_Workspace/TestDevsuDocker/microservice-customer/src/main/java/com/micro/customer/config/SecuriryConfig.java
 /home/david/Documentos/Spring_Workspace/TestDevsuDocker/microservice-customer/src/main/java/com/micro/customer/services/ClientService.java
 /home/david/Documentos/Spring_Workspace/TestDevsuDocker/microservice-customer/src/main/java/com/micro/customer/controllers/ClientController.java
 /home/david/Documentos/Spring_Workspace/TestDevsuDocker/microservice-customer/src/main/java/com/micro/customer/controllers/ErrorHandlerException.java

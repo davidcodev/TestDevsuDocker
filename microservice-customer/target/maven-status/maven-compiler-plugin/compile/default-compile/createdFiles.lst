@@ -7,5 +7,6 @@ com/micro/customer/repositories/ClientRepository.class
 com/micro/customer/dto/CustomerDTO.class
 com/micro/customer/dto/CustomerUpdateDTO.class
 com/micro/customer/entities/Person.class
+com/micro/customer/config/SecuriryConfig.class
 com/micro/customer/services/ClientService.class
 com/micro/customer/entities/Client.class

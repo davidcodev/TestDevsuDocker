@@ -4,6 +4,7 @@ import com.micro.customer.dto.CustomerUpdateDTO;
 import com.micro.customer.entities.Client;
 import com.micro.customer.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -16,6 +17,12 @@ import java.util.Optional;
 public class ClientServiceImpl implements ClientService {
     @Autowired
     private ClientRepository clientRepository;
+
+    private final BCryptPasswordEncoder bCrypt;
+
+    public ClientServiceImpl(BCryptPasswordEncoder bCrypt) {
+        this.bCrypt = bCrypt;
+    }
 
     /**
      * Busca todos los clientes registrados
@@ -57,6 +64,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     @Transactional
     public Client save(Client client) {
+        client.setContrasena(bCrypt.encode(client.getContrasena()));
         return clientRepository.save(client);
     }
 
@@ -77,7 +85,7 @@ public class ClientServiceImpl implements ClientService {
             clientDB.setEdad(client.getEdad());
             clientDB.setDireccion(client.getDireccion());
             clientDB.setTelefono(client.getTelefono());
-            clientDB.setContrasena(client.getContrasena());
+            clientDB.setContrasena(bCrypt.encode(client.getContrasena()));
             clientDB.setEstado(client.getEstado());
             return Optional.of(clientRepository.save(clientDB));
         }

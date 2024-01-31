@@ -22,7 +22,7 @@ public class Client extends Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long clienteId;
     @NotEmpty(message = "no se ha encontrado")
-    @Size(min = 3, max = 10, message = "debe tener una longitud entre 3 y 10 caracteres")
+    @Size(min = 3, max = 100, message = "debe tener una longitud entre 3 y 10 caracteres")
     private String contrasena;
     @NotNull(message = "no se ha encontrado")
     private Boolean estado;

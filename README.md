@@ -4,7 +4,9 @@ El presente proyecto es una prueba Técnica / Práctica para la empresa Devsu
 
 ## Resumen:
 
-Se trata de un proyecto que aplica una arquitectura de microservicios (Ver archivo Diagrama_Solucion.png ubicado en la raiz) usando el Framework de SpringBoot, el proyecto está  dividido en 5 módulos (microservicios).
+Se trata de un proyecto que aplica una arquitectura de microservicios usando el Framework de SpringBoot, el proyecto está  dividido en 5 módulos (microservicios) estructurados de la siguiente manera:
+
+![Test_Devsu](https://github.com/davidcodev/TestDevsuDocker/blob/master/Diagrama_Solucion.png)
 
 - El primero es un Gateway que se encarga de redireccionar el tráfico que llega desde el puerto 8080 hacia los dos microservicios que se solicitan en la prueba (Clientes, Personas) y (Cuentas, Movimientos); el objetivo es la escalabilidad, por ejemplo si se requiere implementar seguridad (Spring Security) se lo haría en el microservicio Gateway y no en cada uno de los microservicios.
 
